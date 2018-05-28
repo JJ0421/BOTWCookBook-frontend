@@ -1,0 +1,30 @@
+
+
+<div id="parent">
+
+  <div class="queue">
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+  </div>
+
+  <div class="search-wrap">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <div (click)="cookQueue()" class="button">Cook!</div>
+  </div>
+
+  <div class="data" *ngIf="found">
+    <table>
+      <tr *ngFor="let ingredient of ingredients">
+        <td (click)="getItem(ingredient.name)">{{ingredient.name}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

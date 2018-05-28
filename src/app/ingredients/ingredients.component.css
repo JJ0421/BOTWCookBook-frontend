@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+  .searchTerm {
+    display: inline-block;
+    margin-bottom:5px;
+    width: 45%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: black;
+  }
+  
+  .search-wrap{
+    width:50%;
+    margin: auto;
+  }
+
+
+  #parent{
+    padding:10px;
+  }
+
+  .data {
+    margin: auto;
+    width: 50%;
+    background:seashell;
+    border-radius: 3px;
+  }
+
+  .queue {
+    margin: auto;
+    width: 50%;
+  }
+
+  .box {
+    display:inline-block;
+    width:20%;
+    height: 100px;
+    background: black;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  table{
+    width: 100%;
+  }
+  td {
+    border: 1px solid black;
+  }
+
+
+  .button {
+    display:inline-block;
+    background: limegreen;
+    border-radius: 100px;
+    padding: 10px 80px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.00em;
+  }
+  
+  /* Hover state animation applied here */
+  .button:hover { 
+    -webkit-animation: hover 1200ms linear 2 alternate;
+    animation: hover 1200ms linear 2 alternate;
+  }
+  
+  /* Active state animation applied here */
+  .button:active {
+    -webkit-animation: active 1200ms ease 1 alternate;
+    animation: active 1200ms ease 1 alternate; 
+    background: #5F9BE0;
+  }
+  
