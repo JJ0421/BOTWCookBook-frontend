@@ -1,0 +1,25 @@
+<div class="container">  
+    <form id="contact" action="" method="post">
+      <h3>Recipe not found &nbsp; :(</h3>
+      <h4>Use this form to submit your recipe</h4>
+      <fieldset>
+        <input placeholder="Recipe Name" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{getIngredients()}}" type="text" tabindex="2" class="ingredBox" readonly>
+      </fieldset>
+      <fieldset>
+        <input placeholder="" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="" type="text" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <textarea placeholder="" tabindex="5" required></textarea>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" (click)="this.data_service.switch(0)" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+      <p>Click <font color="blue" class="redirect" title="Calculator" (click)="this.data_service.switch(0);">here</font> to return to the calculator</p>
+    </form>
+  </div>

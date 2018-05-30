@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+
+
+#parent{
+  padding:10px;
+}
+
+
+
+
+
+.queue {
+  margin: auto;
+  width: 50%;
+}
+
+.box {
+  display:inline-block;
+  width:20%;
+  height: 100px;
+  background: black;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+  .searchTerm {
+    display: inline-block;
+    margin-bottom:5px;
+    width: 45%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+
+  
+  .search-wrap{
+    width:50%;
+    margin: auto;
+  }
+
+
+
+  #data-container{
+    width:50%;
+    margin: auto;
+  }
+
+
+  #data-wrapper {
+    width: 45%;
+    display:inline-block;
+    background:seashell;
+    border-radius: 3px;
+    height: 500px;
+    overflow-y: scroll;
+  }
+
+
+  #add-hover{
+    cursor:pointer;
+    color: #00B4CC;
+  }
+
+
+
+
+
+  
+  #item-wrapper {
+    position:relative;
+    float: right;
+    width: 45%;
+    border-radius: 3px;
+    height: 500px;
+  }
+
+  #item-row{
+    background:seashell;
+  }
+
+
+  .ghost-button {
+    font-family:sans-serif;
+    border-radius:10px;
+    cursor:pointer;
+    height:35px;    
+    width:100%;    
+    background-color:#39d633;
+    color: seashell;
+    border: 1px solid black;
+    outline: none;
+    text-decoration: none;
+  }
+.ghost-button:hover,
+.ghost-button:active {
+  background-color: rgb(47, 187, 47);
+  color: seashell;
+}
+
+#buttonRow{
+  background:none;
+}
+
+.fa-trash:hover{
+  cursor:pointer;
+  color:red;
+}
+
+  
