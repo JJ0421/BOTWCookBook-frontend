@@ -1,24 +1,25 @@
 <div class="container">  
-    <form id="contact" action="" method="post">
+    <form id="contact">
       <h3>Recipe not found &nbsp; :(</h3>
       <h4>Use this form to submit your recipe</h4>
       <fieldset>
-        <input placeholder="Recipe Name" type="text" tabindex="1" required autofocus>
+        <input [(ngModel)]="name" name="name" placeholder="Recipe Name" type="text" tabindex="1" required autofocus>
       </fieldset>
       <fieldset>
-        <input placeholder="{{getIngredients()}}" type="text" tabindex="2" class="ingredBox" readonly>
+        <label for="ingredients">Ingredients</label>
+        <textarea id="ingredients"  type="ingredients" tabindex="2" readonly>{{getIngredients()}}</textarea>
       </fieldset>
       <fieldset>
-        <input placeholder="" type="text" tabindex="3" required>
+        <input [(ngModel)]="hearts" name="hearts" placeholder="Hearts" type="number" tabindex="3" min="0" required>
       </fieldset>
       <fieldset>
-        <input placeholder="" type="text" tabindex="4" required>
+        <textarea [(ngModel)]="effect" name="effect" placeholder="Effect" type="text" tabindex="4"></textarea>
       </fieldset>
       <fieldset>
-        <textarea placeholder="" tabindex="5" required></textarea>
+        <textarea [(ngModel)]="notes" name="notes" placeholder="Notes" tabindex="5"></textarea>
       </fieldset>
       <fieldset>
-        <button name="submit" type="submit" (click)="this.data_service.switch(0)" id="contact-submit" data-submit="...Sending">Submit</button>
+        <button type="submit" id="contact-submit" (click)="postData()">Submit</button>
       </fieldset>
       <p>Click <font color="blue" class="redirect" title="Calculator" (click)="this.data_service.switch(0);">here</font> to return to the calculator</p>
     </form>

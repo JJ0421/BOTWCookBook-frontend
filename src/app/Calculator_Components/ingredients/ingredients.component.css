@@ -5,6 +5,7 @@
 
 #parent{
   padding:10px;
+  margin-top: 5px;
 }
 
 
@@ -13,17 +14,35 @@
 
 .queue {
   margin: auto;
-  width: 50%;
+  width: 48%;
+  height: 100px;
 }
 
 .box {
   display:inline-block;
   width:20%;
-  height: 100px;
+  height: 100%;
   background: black;
   margin-top: 10px;
   margin-bottom: 5px;
 }
+
+.box-null{
+  display:inline-block;
+  width:20%;
+  height: 100%;
+  background: white;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  line-height:100%;
+  border:1px solid black;
+}
+
+.box-text-wrapper{
+  margin-top:25%;
+}
+
 
 
 
@@ -94,7 +113,7 @@
     cursor:pointer;
     height:35px;    
     width:100%;    
-    background-color:#39d633;
+    background-color:#4CAF50;
     color: seashell;
     border: 1px solid black;
     outline: none;
@@ -102,7 +121,7 @@
   }
 .ghost-button:hover,
 .ghost-button:active {
-  background-color: rgb(47, 187, 47);
+  background-color: #43A047;
   color: seashell;
 }
 

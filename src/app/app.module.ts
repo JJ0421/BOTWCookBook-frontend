@@ -6,6 +6,7 @@ import { IngredientsComponent } from './Calculator_Components/ingredients/ingred
 import {HttpClientModule} from '@angular/common/http';
 import { CalculatorComponent } from './Calculator_Components/calculator/calculator.component';
 import { RecipeRegistrationComponent } from './Calculator_Components/recipe-registration/recipe-registration.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RecipeRegistrationComponent } from './Calculator_Components/recipe-regi
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [WebService],
   bootstrap: [AppComponent]
