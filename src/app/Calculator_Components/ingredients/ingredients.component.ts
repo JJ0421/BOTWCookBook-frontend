@@ -17,6 +17,7 @@ export class IngredientsComponent implements OnInit {
   cookingQueue = [];
   ingredientQueued: boolean = false;
   ingreds: string = "";
+  queryableIngreds: string = "";
   exactRecipes: Recipe[];
 
 
@@ -95,9 +96,10 @@ export class IngredientsComponent implements OnInit {
     var recipeFound = false;
     for (i = 0; i < this.cookingQueue.length - 1; i++) {
       this.ingreds += this.cookingQueue[i].name + "/";
+      this.queryableIngreds += this.cookingQueue[i].name+";";
     }
     this.ingreds += this.cookingQueue[this.cookingQueue.length - 1].name;
-
+    this.queryableIngreds += this.cookingQueue[this.cookingQueue.length-1].name+";";    
     this.webService.getExactRecipe(this.ingreds)
       .subscribe(
         (data: any[]) => {
@@ -111,6 +113,7 @@ export class IngredientsComponent implements OnInit {
             this.ingredientQueued = false;
           }
           this.dataService.setIngredients(this.ingreds);
+          this.dataService.setQueryableIngredients(this.queryableIngreds);       
           this.ingreds = "";
           if (recipeFound) {
             this.dataService.switch(1);

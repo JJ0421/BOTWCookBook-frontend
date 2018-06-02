@@ -1,0 +1,40 @@
+<div class="parent">
+    <div class="data">
+      <ng-container *ngIf="display">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th colspan="5" style="text-align: center">Recipes</th>
+            </tr>
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Ingredients
+              </th>
+              <th style="width:10%">
+                Hearts
+              </th>
+              <th style="width:10%">
+                Effect
+              </th>
+              <th>
+                Notes
+              </th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr *ngFor="let recipe of recipes">
+              <td>{{recipe.name}}</td>
+              <td>{{recipe.ingredients}}</td>
+              <td>{{recipe.hearts}}</td>
+              <td>{{recipe.effect}}</td>
+              <td>{{recipe.notes}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+    </div>
+  </div>

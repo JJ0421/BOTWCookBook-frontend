@@ -18,14 +18,23 @@ export class WebService {
     return this.httpClient.get("/api/find/recipes/ingredients/"+ingreds);
   }
 
+  getAllRecipes(){
+    return this.httpClient.get("/api/recipes");
+  }
+
+  getLikeRecipes(ingreds: String){
+    var reg = /;/gi;
+    ingreds = ingreds.replace(reg, "/");
+    return this.httpClient.get("/api/search/recipes/ingredients/"+ingreds);
+  }
+
   postData(recipe: Recipe){
      return this.httpClient.post("/api/add/recipe", {
        name: recipe.name,
        ingredients: recipe.ingredients,
+       hearts: recipe.hearts,
        effect: recipe.effect,
        notes: recipe.notes
      });
-
-
   }
 }

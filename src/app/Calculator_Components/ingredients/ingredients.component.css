@@ -5,46 +5,8 @@
 
 #parent{
   padding:10px;
-  margin-top: 5px;
+  margin-top: 55px;
 }
-
-
-
-
-
-.queue {
-  margin: auto;
-  width: 48%;
-  height: 100px;
-}
-
-.box {
-  display:inline-block;
-  width:20%;
-  height: 100%;
-  background: black;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-.box-null{
-  display:inline-block;
-  width:20%;
-  height: 100%;
-  background: white;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  text-align: center;
-  line-height:100%;
-  border:1px solid black;
-}
-
-.box-text-wrapper{
-  margin-top:25%;
-}
-
-
-
 
 
 

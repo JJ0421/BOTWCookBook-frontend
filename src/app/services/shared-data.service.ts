@@ -7,7 +7,8 @@ import {BehaviorSubject, Observable} from 'rxjs';
 export class SharedDataService {
   private switcher = new BehaviorSubject<number>(0);
   state = this.switcher.asObservable();
-  ingredients:string = "";
+  private ingredients:string = "";
+  private queryableIngredients: string = "";
 
   constructor() { }
 
@@ -22,6 +23,15 @@ export class SharedDataService {
   getIngredients(){
     return this.ingredients;
   }
+
+  setQueryableIngredients(ingredients:string){
+    this.queryableIngredients = ingredients;
+  }
+
+  getQueryableIngredients(){
+    return this.queryableIngredients;
+  }
+
 
 
 }
