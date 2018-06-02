@@ -1,4 +1,5 @@
-import { IngredientsService } from './ingredients.service';
+import { Ingredient } from './../models/ingredient';
+import { WebService } from './../services/web.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,15 +11,16 @@ export class IngredientsComponent implements OnInit {
   ingredients:Ingredient[];
   found:boolean = false;
   cookingQueue = [];
+  ingredientQueued:boolean = false;
   ingreds:string = "";
   recipeName:string = "";
 
 
-  constructor(private ingredientsService:IngredientsService) { }
+  constructor(private webService:WebService) { }
 
   ngOnInit() {
-    
-    this.ingredientsService.getIngredients()
+
+    this.webService.getIngredients()
     .subscribe(
       (data:any[]) => {
         this.ingredients = data;
@@ -35,7 +37,26 @@ export class IngredientsComponent implements OnInit {
   getItem(item:string){
     if(this.cookingQueue.length < 5){
       this.cookingQueue.push(item);
+      this.ingredientQueued = true;
       console.log(item);
+    }
+  }
+
+  filterTable(){
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("myInput");
+    filter = input.value;
+    table = document.getElementById("dataTable");
+    tr = table.getElementsByTagName("tr");
+    for(i = 0; i < tr.length; i++){
+      td = tr[i].getElementsByTagName("td")[0];
+      if(td){
+        if(td.innerHTML.indexOf(filter) > -1){
+          tr[i].style.display = "";
+        }else{
+          tr[i].style.display = "none";
+        }
+      }
     }
   }
 
@@ -44,7 +65,7 @@ export class IngredientsComponent implements OnInit {
       this.ingreds += item + "/";
     }
     console.log(this.ingreds);
-    this.ingredientsService.getExactRecipe(this.ingreds)
+    this.webService.getExactRecipe(this.ingreds)
     .subscribe(
       (data:any) => {
           this.recipeName = data[0].name;
@@ -56,11 +77,4 @@ export class IngredientsComponent implements OnInit {
 
 }
 
-class Ingredient{
-  id:number;
-  name:string;
-  type:string;
-  hearts:string;
-  effect:string;
-}
 

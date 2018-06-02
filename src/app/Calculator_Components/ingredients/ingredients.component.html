@@ -1,18 +1,6 @@
+
+
 <div id="parent">
-
-  <div class="queue">
-    <div class="box">
-    </div>
-    <div class="box">
-    </div>
-    <div class="box">
-    </div>
-    <div class="box">
-    </div>
-    <div class="box">
-    </div>
-  </div>
-
   <div class="search-wrap">
     <input type="text" id="myInput" (keyup)="filterTable()" class="searchTerm" placeholder="What are you looking for?">
   </div>
@@ -22,18 +10,25 @@
       <table id="dataTable" class="table table-hover">
         <tr *ngFor="let ingredient of ingredients">
           <td id="ingredientName">{{ingredient.name}}</td>
-          <td><a id="add-hover" (click)="getItem(ingredient.name)">+</a></td>
+          <td>
+            <a id="add-hover" (click)="getItem(ingredient)">+</a>
+          </td>
         </tr>
       </table>
     </div>
 
     <div id="item-wrapper" *ngIf="ingredientQueued">
       <table class="table table-hover">
-        <tr id="item-row" *ngFor="let ingred of cookingQueue">
-          <td>{{ingred}}</td>
+        <tr id="item-row" *ngFor="let ingred of cookingQueue; let i = index">
+          <td>{{ingred.name}}</td>
+          <td width="5%">
+            <i (click)="removeIngredientFromQueue(i)" class="fa fa-trash"></i>
+          </td>
         </tr>
-        <tr>
-          <button class="ghost-button">Cook!</button>
+        <tr id="buttonRow">
+          <td colspan="2">
+            <button class="ghost-button" (click)="cookQueue()">Cook!</button>
+          </td>
         </tr>
       </table>
     </div>
