@@ -28,8 +28,28 @@ export class RecipesComponent implements OnInit {
           this.displayExact = false;
         }
         for(var i = 0; i < this.queryContainer.length; i++){
-          console.log(this.queryContainer[i].ingredients);
-          if(this.queryContainer[i].ingredients === this.data_service.getQueryableIngredients()){
+          var arr = this.data_service.getQueryableIngredients().split(";");
+          var queryAbleIngredients = "";
+          arr.sort();
+
+          var j = 0;
+          if(arr[0] === ""){
+            j = 1;
+          }
+
+          for(j; j < arr.length; j++){
+            queryAbleIngredients += arr[j]+";";
+          }
+
+          console.log(queryAbleIngredients);
+          
+          
+          
+
+          console.log("here");
+          console.log("-----------");
+
+          if(this.queryContainer[i].ingredients === queryAbleIngredients){
             var reg = /;/gi;
             this.queryContainer[i].ingredients = this.queryContainer[i].ingredients.replace(reg, ", ");
             this.queryContainer[i].ingredients = this.queryContainer[i].ingredients.substr(0, this.queryContainer[i].ingredients.length-2);
